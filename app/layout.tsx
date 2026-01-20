@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Outfit } from "next/font/google";
 import "./globals.css";
 
@@ -14,7 +14,15 @@ const outfit = Outfit({
   display: "swap",
 });
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  themeColor: "#7BC043",
+};
+
 export const metadata: Metadata = {
+  metadataBase: new URL("https://faithmulirahcc.com"),
   title: "Faith Mulira Health Care Centre",
   description: "Faith Mulira Health Care Centre provides affordable, quality healthcare services in Masooli, Gayaza Road. Level III facility offering maternity, outpatient, reproductive health, and vaccination services.",
   keywords: "health centre Gayaza, Faith Mulira, healthcare Masooli, maternity services Uganda, vaccination Gayaza, affordable healthcare Kampala",
@@ -62,8 +70,6 @@ export const metadata: Metadata = {
       },
     ],
   },
-  viewport: "width=device-width, initial-scale=1, maximum-scale=5",
-  themeColor: "#7BC043",
   robots: "index, follow",
 };
 
