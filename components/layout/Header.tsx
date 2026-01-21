@@ -3,7 +3,13 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { FaPhone, FaBars, FaTimes, FaWhatsapp, FaChevronDown } from "react-icons/fa";
+import {
+  FaPhone,
+  FaBars,
+  FaTimes,
+  FaWhatsapp,
+  FaChevronDown,
+} from "react-icons/fa";
 import { NAV_LINKS, CONTACT_INFO, SITE_NAME } from "@/lib/constants";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -90,6 +96,13 @@ export default function Header() {
             </div>
           </Link>
 
+          {/* Mobile Center Abbreviation - Only visible on mobile */}
+          <div className="md:hidden absolute left-1/2 transform -translate-x-1/2">
+            <span className="text-xl font-heading font-bold text-secondary">
+              FMHCC
+            </span>
+          </div>
+
           {/* Desktop Navigation (> xl) - Classic Full List */}
           <ul className="hidden xl:flex items-center gap-6">
             {NAV_LINKS.map((link) => (
@@ -106,70 +119,70 @@ export default function Header() {
 
           {/* Tablet/Laptop Navigation (md to xl) - Grouped Dropdowns */}
           <ul className="hidden md:flex xl:hidden items-center gap-6">
-            <li 
+            <li
               className="relative group"
-              onMouseEnter={() => setActiveDropdown('about')}
+              onMouseEnter={() => setActiveDropdown("about")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-               <button 
-                onClick={() => toggleDropdown('about')}
+              <button
+                onClick={() => toggleDropdown("about")}
                 className="flex items-center gap-1 text-gray-700 hover:text-primary font-medium focus:outline-none"
-               >
-                 About & Contact <FaChevronDown className="text-xs" />
-               </button>
-               <AnimatePresence>
-                 {activeDropdown === 'about' && (
-                   <motion.div
-                     initial={{ opacity: 0, y: 10 }}
-                     animate={{ opacity: 1, y: 0 }}
-                     exit={{ opacity: 0, y: 10 }}
-                     className="absolute top-full left-0 bg-white shadow-lg rounded-lg p-4 min-w-[180px] flex flex-col gap-2 border border-gray-100"
-                   >
-                     {groupedLinks["About & Contact"].map((link) => (
-                       <Link
-                         key={link.href}
-                         href={link.href}
-                         className="text-gray-600 hover:text-primary transition-colors"
-                       >
-                         {link.label}
-                       </Link>
-                     ))}
-                   </motion.div>
-                 )}
-               </AnimatePresence>
+              >
+                About & Contact <FaChevronDown className="text-xs" />
+              </button>
+              <AnimatePresence>
+                {activeDropdown === "about" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full left-0 bg-white shadow-lg rounded-lg p-4 min-w-[180px] flex flex-col gap-2 border border-gray-100"
+                  >
+                    {groupedLinks["About & Contact"].map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="text-gray-600 hover:text-primary transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </li>
 
-            <li 
+            <li
               className="relative group"
-              onMouseEnter={() => setActiveDropdown('services')}
+              onMouseEnter={() => setActiveDropdown("services")}
               onMouseLeave={() => setActiveDropdown(null)}
             >
-               <button 
-                onClick={() => toggleDropdown('services')}
+              <button
+                onClick={() => toggleDropdown("services")}
                 className="flex items-center gap-1 text-gray-700 hover:text-primary font-medium focus:outline-none"
-               >
-                 Care Services <FaChevronDown className="text-xs" />
-               </button>
-               <AnimatePresence>
-                 {activeDropdown === 'services' && (
-                   <motion.div
-                     initial={{ opacity: 0, y: 10 }}
-                     animate={{ opacity: 1, y: 0 }}
-                     exit={{ opacity: 0, y: 10 }}
-                     className="absolute top-full left-0 bg-white shadow-lg rounded-lg p-4 min-w-[180px] flex flex-col gap-2 border border-gray-100"
-                   >
-                     {groupedLinks["Care Services"].map((link) => (
-                       <Link
-                         key={link.href}
-                         href={link.href}
-                         className="text-gray-600 hover:text-primary transition-colors"
-                       >
-                         {link.label}
-                       </Link>
-                     ))}
-                   </motion.div>
-                 )}
-               </AnimatePresence>
+              >
+                Care Services <FaChevronDown className="text-xs" />
+              </button>
+              <AnimatePresence>
+                {activeDropdown === "services" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: 10 }}
+                    className="absolute top-full left-0 bg-white shadow-lg rounded-lg p-4 min-w-[180px] flex flex-col gap-2 border border-gray-100"
+                  >
+                    {groupedLinks["Care Services"].map((link) => (
+                      <Link
+                        key={link.href}
+                        href={link.href}
+                        className="text-gray-600 hover:text-primary transition-colors"
+                      >
+                        {link.label}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </li>
           </ul>
 
