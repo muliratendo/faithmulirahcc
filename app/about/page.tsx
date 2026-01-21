@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Section from "@/components/ui/Section";
 import { MISSION, VISION, VALUES } from "@/lib/constants";
 import { FaCheckCircle } from "react-icons/fa";
@@ -37,7 +38,7 @@ export default function AboutPage() {
                   a visionary Ugandan healthcare advocate who recognized the critical
                   need for accessible medical services in the Masooli area.
                 </p>
-                <p className="leading-relaxed">
+                <p className="leading-relaxed mb-4">
                   In 2009, New Vision recognized the establishment of our facility as a significant
                   development in community healthcare, highlighting our commitment to serving the local
                   population with professional medical care.
@@ -66,11 +67,58 @@ export default function AboutPage() {
                   <FaCheckCircle className="text-secondary mt-1 flex-shrink-0" />
                   <span><strong>Present:</strong> Registered Level III facility</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <FaCheckCircle className="text-secondary mt-1 flex-shrink-0" />
-                  <span><strong>Present:</strong> Serving thousands of patients annually</span>
-                </li>
               </ul>
+            </div>
+          </div>
+        </ScrollReveal>
+      </Section>
+
+      {/* Founder Profile */}
+      <Section background="gray">
+        <ScrollReveal width="100%">
+          <div className="max-w-4xl mx-auto">
+             <div className="bg-white rounded-lg shadow-xl overflow-hidden md:flex">
+              <div className="md:w-1/3 bg-primary-100 flex items-center justify-center p-8">
+                <Image
+                  src="/faithmulira.jpg"
+                  alt="Faith Mulira - Founder"
+                  width={160}
+                  height={160}
+                  className="w-60 h-60 rounded-full object-cover shadow-lg"
+                />
+              </div>
+              <div className="p-8 md:w-2/3">
+                <span className="inline-block bg-accent text-white text-sm px-3 py-1 rounded-full mb-3">
+                  Founder
+                </span>
+                <h2 className="text-3xl font-heading font-bold text-primary mb-2">Faith Mulira</h2>
+                <h4 className="text-lg text-gray-600 font-bold mb-4">Visionary Healthcare Advocate</h4>
+                
+                <p className="text-gray-700 leading-relaxed mb-6">
+                  Faith Mulira dedicated her life to improving the health and well-being of her community. 
+                  Recognizing the lack of accessible healthcare in Masooli, she established this centre 
+                  with a vision to provide dignified, affordable medical care to all. Her legacy lives on 
+                  through the thousands of patients served annually.
+                </p>
+
+                <div className="border-t border-gray-100 pt-4">
+                  <h5 className="font-bold text-gray-900 mb-2">Bibliography & Recognition</h5>
+                  <ul className="space-y-2 text-sm text-gray-600">
+                     <li className="flex items-start gap-2">
+                      <span className="text-secondary">•</span>
+                      <span>Featured in <em>New Vision</em> (2009) for contribution to community health.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                       <span className="text-secondary">•</span>
+                      <span>Community Leadership Award recipient.</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                       <span className="text-secondary">•</span>
+                      <span>Pioneer in Masooli healthcare infrastructure.</span>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </ScrollReveal>

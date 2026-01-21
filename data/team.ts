@@ -2,44 +2,91 @@ export interface TeamMember {
   id: string;
   name: string;
   role: string;
-  qualifications: string[];
-  bio: string;
   image: string;
-  isFounder?: boolean;
+  category: "medical" | "support";
 }
 
 export const TEAM_MEMBERS: TeamMember[] = [
+  // Medical Staff
   {
-    id: "faith-mulira",
-    name: "Faith Mulira",
-    role: "Founder",
-    qualifications: ["Healthcare Visionary", "Community Leader"],
-    bio: "Faith Mulira founded this health centre with a vision to provide affordable, quality healthcare to the Gayaza community. Based in the US, Faith recognized the need for accessible medical services in the area and established this Level III facility to serve the local population.",
-    image: "/images/team/faith-mulira.jpg",
-    isFounder: true,
+    id: "antonius-ferret",
+    name: "Antonius Ferret",
+    role: "Doctor",
+    image: "/images/team/antonius-ferret-doctor.webp",
+    category: "medical",
   },
   {
-    id: "medical-officer",
-    name: "Dr. [Name To Be Updated]",
-    role: "Medical Officer",
-    qualifications: ["MBChB", "Level III Health Centre Certification"],
-    bio: "Our dedicated Medical Officer brings years of experience in community healthcare, committed to providing compassionate and comprehensive medical services to all patients.",
-    image: "/images/team/medical-officer.jpg",
+    id: "usman-yousaf",
+    name: "Usman Yousaf",
+    role: "Doctor",
+    image: "/images/team/usman-yousaf-doctor.webp",
+    category: "medical",
   },
   {
-    id: "nurse-midwife",
-    name: "[Name To Be Updated]",
-    role: "Senior Nurse/Midwife",
-    qualifications: ["Registered Nurse", "Certified Midwife"],
-    bio: "With extensive experience in maternal and child health, our Senior Nurse provides expert care for expectant mothers and newborns, ensuring safe deliveries and healthy outcomes.",
-    image: "/images/team/nurse.jpg",
+    id: "dawid-tkocz",
+    name: "Dawid Tkocz",
+    role: "Radiologist",
+    image: "/images/team/dawid-tkocz-radiologist.webp",
+    category: "medical",
   },
   {
-    id: "clinical-officer",
-    name: "[Name To Be Updated]",
-    role: "Clinical Officer",
-    qualifications: ["Diploma in Clinical Medicine"],
-    bio: "Our Clinical Officer provides primary healthcare services, health education, and preventative care to patients of all ages in our community.",
-    image: "/images/team/clinical-officer.jpg",
+    id: "ekaterina-cotton",
+    name: "Ekaterina Cotton",
+    role: "Radiologist",
+    image: "/images/team/ekaterina-cotton-radiologist.webp",
+    category: "medical",
+  },
+  {
+    id: "bruno-rodrigues",
+    name: "Bruno Rodrigues",
+    role: "Nurse",
+    image: "/images/team/bruno-rodrigues-nurse.webp",
+    category: "medical",
+  },
+  {
+    id: "ocho-artex",
+    name: "Ocho Artex",
+    role: "Nurse",
+    image: "/images/team/ocho-artex-nurse.webp",
+    category: "medical",
+  },
+  {
+    id: "artur-tumasjan",
+    name: "Artur Tumasjan",
+    role: "Surgery Room Nurse",
+    image: "/images/team/artur-tumasjan-sugeryroomnurse.webp",
+    category: "medical",
+  },
+  {
+    id: "ani-kolleshi",
+    name: "Ani Kolleshi",
+    role: "Lab Specialist",
+    image: "/images/team/ani-kolleshi-Lab-Specialist.webp",
+    category: "medical",
+  },
+  {
+    id: "sandro-tavares",
+    name: "Sandro Tavares",
+    role: "Pharmacist",
+    image: "/images/team/sandro-tavares-pharmacist.webp",
+    category: "medical",
+  },
+  // Support Staff
+  {
+    id: "cherry-fauntleroy",
+    name: "Cherry Fauntleroy",
+    role: "Receptionist",
+    image: "/images/team/cherry-fauntleroy-receptionist.webp",
+    category: "support",
+  },
+  {
+    id: "sora-shimazaki",
+    name: "Sora Shimazaki",
+    role: "Secretary",
+    image: "/images/team/sora-shimazaki-secretary.webp",
+    category: "support",
   },
 ];
+
+export const getMedicalStaff = () => TEAM_MEMBERS.filter((m) => m.category === "medical");
+export const getSupportStaff = () => TEAM_MEMBERS.filter((m) => m.category === "support");

@@ -1,5 +1,5 @@
 import { IconType } from "react-icons";
-import { FaStethoscope, FaHeartbeat, FaBaby, FaSyringe, FaUsers } from "react-icons/fa";
+import { FaStethoscope, FaHeartbeat, FaBaby, FaSyringe, FaUsers, FaProcedures, FaXRay } from "react-icons/fa";
 
 export interface Service {
   id: string;
@@ -22,6 +22,33 @@ export const SERVICES: Service[] = [
       "Health screening and check-ups",
       "Chronic disease management",
       "Minor procedures",
+    ],
+    featured: true,
+  },
+  {
+    id: "surgery",
+    title: "Major & Minor Surgery",
+    icon: FaProcedures,
+    description: "Surgical procedures performed by qualified specialists in a sterile environment.",
+    details: [
+      "Minor surgical procedures",
+      "Major surgeries (by appointment)",
+      "Post-operative care",
+      "Circumcision",
+      "Wound care and suturing",
+    ],
+    featured: true,
+  },
+  {
+    id: "radiology",
+    title: "Radiology & Imaging",
+    icon: FaXRay,
+    description: "Diagnostic imaging services for accurate diagnosis and treatment planning.",
+    details: [
+      "CT scan services",
+      "Ultrasound imaging",
+      "Radiological reports",
+      "Specialist consultations",
     ],
     featured: true,
   },

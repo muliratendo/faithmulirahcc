@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import Section from "@/components/ui/Section";
 import Image from "next/image";
-import { TEAM_MEMBERS } from "@/data/team";
+import Section from "@/components/ui/Section";
 import ScrollReveal from "@/components/ui/ScrollReveal";
+import { getMedicalStaff, getSupportStaff } from "@/data/team";
 
 export const metadata: Metadata = {
   title: "Our Team | Faith Mulira Health Care Centre",
@@ -25,53 +25,80 @@ export default function TeamPage() {
         </ScrollReveal>
       </Section>
 
-      {/* Team Grid */}
+      {/* Leadership */}
       <Section background="white">
         <ScrollReveal width="100%">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {TEAM_MEMBERS.map((member) => (
-              <div
-                key={member.id}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-all duration-300"
-              >
-                {/* Profile Image Placeholder */}
-                <div className="bg-gradient-to-br from-primary-100 to-secondary-100 h-64 flex items-center justify-center">
-                  <div className="w-32 h-32 bg-primary-200 rounded-full flex items-center justify-center">
-                    <span className="text-5xl font-bold text-primary">
-                      {member.name.charAt(0)}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="p-6">
-                  {member.isFounder && (
-                    <span className="inline-block bg-accent text-white text-sm px-3 py-1 rounded-full mb-3">
-                      Founder
-                    </span>
-                  )}
-                  <h3 className="text-2xl font-heading font-bold text-gray-900 mb-2">
-                    {member.name}
-                  </h3>
-                  <p className="text-primary font-medium mb-3">{member.role}</p>
-
-                  {/* Qualifications */}
-                  <div className="mb-4">
-                    <h4 className="text-sm font-bold text-gray-700 mb-2">Qualifications:</h4>
-                    <ul className="space-y-1">
-                      {member.qualifications.map((qual, idx) => (
-                        <li key={idx} className="text-sm text-gray-600">
-                          • {qual}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Bio */}
-                  <p className="text-gray-700 leading-relaxed">{member.bio}</p>
-                </div>
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-primary text-center mb-12">Leadership</h2>
+            <div className="bg-gradient-to-br from-primary-50 to-secondary-50 rounded-lg shadow-xl overflow-hidden md:flex">
+              <div className="md:w-1/3 flex items-center justify-center p-8">
+                <Image
+                  src="/images/team/tendomulira.webp"
+                  alt="Dr. Mulira Tendo - Chief Medical Doctor"
+                  width={200}
+                  height={200}
+                  className="w-48 h-48 rounded-full object-cover shadow-lg"
+                />
               </div>
-            ))}
+              <div className="p-8 md:w-2/3">
+                <span className="inline-block bg-primary text-white text-sm px-3 py-1 rounded-full mb-3">
+                  Chief Medical Doctor
+                </span>
+                <h3 className="text-3xl font-heading font-bold text-gray-900 mb-2">Dr. Mulira Tendo</h3>
+                <p className="text-gray-700 leading-relaxed">
+                  Dr. Mulira Tendo leads our medical team with dedication and expertise, 
+                  ensuring the highest standards of patient care across all departments.
+                </p>
+              </div>
+            </div>
+          </div>
+        </ScrollReveal>
+      </Section>
+
+      {/* Medical Staff */}
+      <Section background="gray">
+        <ScrollReveal width="100%">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-primary text-center mb-12">Medical Team</h2>
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+              {getMedicalStaff().map((member) => (
+                <div key={member.id} className="bg-white rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
+                  <Image
+                    src={member.image}
+                    alt={`${member.name} - ${member.role}`}
+                    width={128}
+                    height={128}
+                    className="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-md"
+                  />
+                  <h3 className="text-lg font-bold text-gray-800">{member.name}</h3>
+                  <p className="text-sm text-primary font-medium">{member.role}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </ScrollReveal>
+      </Section>
+
+      {/* Support Staff */}
+      <Section background="white">
+        <ScrollReveal width="100%">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-primary text-center mb-12">Support Staff</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {getSupportStaff().map((member) => (
+                <div key={member.id} className="bg-gray-50 rounded-lg p-6 text-center hover:shadow-lg transition-shadow">
+                  <Image
+                    src={member.image}
+                    alt={`${member.name} - ${member.role}`}
+                    width={128}
+                    height={128}
+                    className="w-32 h-32 rounded-full mx-auto mb-4 object-cover shadow-md"
+                  />
+                  <h3 className="text-lg font-bold text-gray-800">{member.name}</h3>
+                  <p className="text-sm text-secondary font-medium">{member.role}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </ScrollReveal>
       </Section>

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Section from "@/components/ui/Section";
-import { FaHospital, FaMicroscope, FaBed, FaPrescriptionBottleAlt, FaWheelchair } from "react-icons/fa";
+import { FaHospital, FaMicroscope, FaBed, FaPrescriptionBottleAlt, FaWheelchair, FaProcedures, FaXRay } from "react-icons/fa";
 import ScrollReveal from "@/components/ui/ScrollReveal";
 
 export const metadata: Metadata = {
@@ -62,6 +62,28 @@ const facilities = [
       "Wheelchair accessible",
       "Patient waiting areas",
       "Clean restroom facilities",
+    ],
+  },
+  {
+    icon: FaProcedures,
+    title: "Operating Theatre",
+    description: "Sterile surgical environment equipped for major and minor procedures.",
+    features: [
+      "Sterile operating room",
+      "Surgical lighting",
+      "Anesthesia equipment",
+      "Recovery area",
+    ],
+  },
+  {
+    icon: FaXRay,
+    title: "Radiology Lab",
+    description: "Dedicated imaging department with modern diagnostic equipment.",
+    features: [
+      "CT scan room",
+      "X-ray facilities",
+      "Ultrasound room",
+      "Image processing area",
     ],
   },
 ];
@@ -141,6 +163,9 @@ export default function FacilitiesPage() {
                 "Thermometers and diagnostic tools",
                 "Delivery equipment and supplies",
                 "Laboratory testing equipment",
+                "Operating theatre equipment",
+                "Surgical instruments",
+                "CT scan equipment",
                 "Sterilization equipment",
                 "Medical refrigeration for vaccines",
                 "Emergency medical supplies",
