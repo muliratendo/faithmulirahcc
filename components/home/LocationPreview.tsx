@@ -28,8 +28,8 @@ export default function LocationPreview() {
           <div className="space-y-6">
             <h2 className="text-primary font-heading mb-4">Visit Us</h2>
             <p className="text-lg text-gray-700">
-              Conveniently located in Masooli along the Gayaza Road. We are visibly signposted and
-              easy to access for all community members.
+              Conveniently located in Masooli along the Gayaza Road. We are
+              visibly signposted and easy to access for all community members.
             </p>
 
             <div className="space-y-4">
@@ -41,7 +41,13 @@ export default function LocationPreview() {
                   <h3 className="font-bold text-gray-900">Address</h3>
                   <p className="text-gray-600">{CONTACT_INFO.address.full}</p>
                   <p className="text-sm text-primary font-medium mt-1">
-                    Plus Code: {CONTACT_INFO.address.plusCode}
+                    <a
+                      href="https://maps.google.com/maps?ll=0.419322,32.591322&z=16&t=h&hl=en&gl=UG&mapclient=embed&cid=145743538547691854"
+                      className="hover:text-secondary"
+                      target="_blank"
+                    >
+                      Plus Code: {CONTACT_INFO.address.plusCode}
+                    </a>
                   </p>
                 </div>
               </div>
@@ -54,7 +60,12 @@ export default function LocationPreview() {
                   <h3 className="font-bold text-gray-900">Operating Hours</h3>
                   <p className="text-gray-600">Open 24/7 for all services</p>
                   <p className="text-sm text-red-600 font-bold mt-1">
-                    Emergency Care Available 24/7
+                    <a
+                      href={`tel:${CONTACT_INFO.phone}`}
+                      className="hover:text-primary"
+                    >
+                      Emergency Care Available 24/7
+                    </a>
                   </p>
                 </div>
               </div>
@@ -65,8 +76,22 @@ export default function LocationPreview() {
                 </div>
                 <div>
                   <h3 className="font-bold text-gray-900">Contact</h3>
-                  <p className="text-gray-600">{CONTACT_INFO.phone}</p>
-                  <p className="text-gray-600">{CONTACT_INFO.email}</p>
+                  <p className="text-gray-600">
+                    <a
+                      href={`tel:${CONTACT_INFO.phone}`}
+                      className="hover:text-primary"
+                    >
+                      {CONTACT_INFO.phone}
+                    </a>
+                  </p>
+                  <p className="text-gray-600">
+                    <a
+                      href={`mailto:${CONTACT_INFO.email}`}
+                      className="hover:text-primary"
+                    >
+                      {CONTACT_INFO.email}
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>

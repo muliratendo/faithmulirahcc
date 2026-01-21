@@ -97,14 +97,14 @@ export default function HeroSection() {
                 <div className="text-primary-300 text-3xl mb-3 flex justify-center">
                   <FaAward />
                 </div>
-                <p className="text-3xl font-bold mb-1">15+</p>
+                <p className="text-3xl font-bold mb-1">16+</p>
                 <p className="text-sm text-primary-100">Years Serving</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/10 hover:bg-white/15 transition-colors">
                 <div className="text-primary-300 text-3xl mb-3 flex justify-center">
                   <FaBriefcase />
                 </div>
-                <p className="text-3xl font-bold mb-1">5</p>
+                <p className="text-3xl font-bold mb-1">7</p>
                 <p className="text-sm text-primary-100">Core Services</p>
               </div>
               <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/10 hover:bg-white/15 transition-colors">

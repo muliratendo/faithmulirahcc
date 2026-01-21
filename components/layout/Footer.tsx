@@ -8,7 +8,12 @@ import {
   FaTwitter,
   FaWhatsapp,
 } from "react-icons/fa";
-import { CONTACT_INFO, SITE_NAME, NAV_LINKS, OPERATING_HOURS } from "@/lib/constants";
+import {
+  CONTACT_INFO,
+  SITE_NAME,
+  NAV_LINKS,
+  OPERATING_HOURS,
+} from "@/lib/constants";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -24,8 +29,8 @@ export default function Footer() {
               {SITE_NAME}
             </h3>
             <p className="text-sm leading-relaxed mb-4">
-              A registered Level III health facility providing affordable, quality healthcare
-              to the Masooli community since 2009.
+              A registered Level III health facility providing affordable,
+              quality healthcare to the Masooli community since 2009.
             </p>
             <div className="flex gap-4">
               <a
@@ -89,13 +94,19 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-3">
                 <FaPhone className="text-primary flex-shrink-0" />
-                <a href={`tel:${CONTACT_INFO.phone}`} className="hover:text-primary">
+                <a
+                  href={`tel:${CONTACT_INFO.phone}`}
+                  className="hover:text-primary"
+                >
                   {CONTACT_INFO.phone}
                 </a>
               </li>
               <li className="flex items-center gap-3">
                 <FaEnvelope className="text-primary flex-shrink-0" />
-                <a href={`mailto:${CONTACT_INFO.email}`} className="hover:text-primary">
+                <a
+                  href={`mailto:${CONTACT_INFO.email}`}
+                  className="hover:text-primary"
+                >
                   {CONTACT_INFO.email}
                 </a>
               </li>
@@ -105,16 +116,22 @@ export default function Footer() {
           {/* Operating Hours */}
           <div>
             <h4 className="text-white font-heading font-bold text-lg mb-4">
-              <FaClock className="inline mr-2 text-primary" />
               Operating Hours
             </h4>
             <ul className="space-y-4 text-sm">
               <li className="flex items-center gap-3">
-                <span className="w-2 h-2 bg-primary rounded-full"></span>
-                <span className="text-white font-bold">{OPERATING_HOURS.open}</span>
+                <FaClock className="inline ml-1 text-primary" />
+                <span className="text-white font-bold">
+                  {OPERATING_HOURS.open}
+                </span>
               </li>
               <li className="text-accent font-medium leading-relaxed">
-                {OPERATING_HOURS.emergency}
+                <a
+                  href={`tel:${CONTACT_INFO.phone}`}
+                  className="hover:text-white"
+                >
+                  {OPERATING_HOURS.emergency}
+                </a>
               </li>
             </ul>
           </div>
