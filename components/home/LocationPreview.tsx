@@ -14,7 +14,7 @@ export default function LocationPreview() {
           <div className="h-[400px] bg-gray-200 rounded-2xl overflow-hidden shadow-lg relative">
             <iframe
               title="Faith Mulira Health Care Centre Location"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7155663765175!2d32.58865587494297!3d0.4192422730373929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db1f67755417b%3A0x205c8f9e371914e!2sFaith%20Mulira%20Health%20Care%20Centre%2C%20Masooli!5e0!3m2!1sen!2sug!4v1716300000000!5m2!1sen!2sug"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.7155663765175!2d32.58865587494297!3d0.4192422730373929!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177db1f67755417b%3A0x205c8f9e371914e!2sFaith%20Mulira%20Health%20Care%20Centre%2C%20Masooli!5e1!3m2!1sen!2sug!4v1716300000000!5m2!1sen!2sug"
               width="100%"
               height="100%"
               style={{ border: 0 }}
